@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import Home from "./pages/home/Home";
+import React from "react";
+import Watch from "./pages/watch/Watch";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import GetIMDB from "./components/movie_db/imdb";
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
+  let user = true;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/register"
+          element={!user ? <Register /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/login"
+          element={!user ? <Login /> : <Navigate to="/" />}
+        />
+        <Route
+          exact
+          path="/"
+          element={user ? <Home /> : <Navigate to="/register" />}
+        />
+        {user && (
+          <>
+            <Route path="/movies" element={<Home type={"movie"} />} />
+            <Route path="/series" element={<Home type={"series"} />} />
+            <Route path="/watch" element={<Watch />} />
+          </>
+        )}
+      </Routes>
+    </Router>
+    // <GetIMDB />
   );
 }
 
