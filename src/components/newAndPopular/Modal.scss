@@ -1,0 +1,27 @@
+h1{
+  display: flex;
+  justify-content: center;
+}
+
+.modal-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-box #rating-title{
+  margin-left: 13px;
+}
+
+.rating-box #number{
+  font-size: 2rem;
+  width: fit-content;
+  padding: 15px 15px;
+  border: 3px solid red;
+  margin-left: 1rem;
+}
+
