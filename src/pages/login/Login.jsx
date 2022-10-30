@@ -14,27 +14,8 @@ export default function Login() {
   });
   const { setUser, setToken } = useContext(userContext);
 
-  const keypressLogin = ({ key }) => {
-    console.log("keypress running");
-    if (key === "Enter") {
-      axios
-        .post("http://localhost:8080/api/auth/login", {
-          email: formInfo.email,
-          password: formInfo.password,
-        })
-
-        .then((response) => {
-          setToken(response.data.access_token);
-          setUser(true);
-          history("/");
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  };
-
-  const startLogin = () => {
+  const startLogin = (e) => {
+    e.preventDefault();
     axios
       .post("http://localhost:8080/api/auth/login", {
         email: formInfo.email,
@@ -68,10 +49,6 @@ export default function Login() {
       });
   };
 
-  useEffect(() => {
-    window.addEventListener("keypress", keypressLogin);
-  });
-
   return (
     <div className="login">
       <div className="top">
@@ -80,7 +57,7 @@ export default function Login() {
         </div>
       </div>
       <div className="container">
-        <form>
+        <form type="submit">
           <h1>Sign In</h1>
           <input
             type="email"
@@ -102,7 +79,7 @@ export default function Login() {
               }))
             }
           />
-          <button type="button" className="loginButton" onClick={startLogin}>
+          <button type="submit" className="loginButton" onClick={startLogin}>
             Sign In
           </button>
           <button type="button" className="loginButton" onClick={guestLogin}>
