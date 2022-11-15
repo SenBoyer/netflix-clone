@@ -9,6 +9,7 @@ import axios from "axios";
 export default function Featured({ type, lists, setLists, listCopy }) {
   const [content, setContent] = useState({});
   const { token } = useContext(userContext);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const getRandomContent = async () => {
@@ -40,15 +41,12 @@ export default function Featured({ type, lists, setLists, listCopy }) {
     }
   };
 
-  // useEffect(() => {
-  //   let url = `https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}`;
-  //   fetch(url)
-  //     .then((result) => result.json())
-  //     .then((data) => {
-  //       let number = Math.floor(Math.random() * 10);
-  //       setDataSource(data.results[number]);
-  //     });
-  // }, []);
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      console.log("width changed!");
+      setIsMobile(true);
+    }
+  }, []);
 
   return (
     <>
@@ -74,7 +72,8 @@ export default function Featured({ type, lists, setLists, listCopy }) {
             </select>
           </div>
         )}
-        <img src={content.img} alt="" />
+        {isMobile && <img src={content.mobileCover} alt="" />}
+        {!isMobile && <img src={content.img} alt="" />}
         <div className="info">
           <img src={content.imgTitle} alt={content.title} />
           {/* <span className="desc">{dataSource.overview}</span> */}
