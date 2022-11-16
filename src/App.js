@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import NewSection from "./components/newAndPopular/NewAndPopular";
 import { userContext } from "./contextApi";
+import Dropdown from "./components/navbar/Dropdown";
 
 import {
   BrowserRouter as Router,
@@ -41,7 +42,6 @@ function App() {
         )}
       </Routes>
     </Router>
-    // <GetIMDB />
   );
 }
 

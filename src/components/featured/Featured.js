@@ -8,8 +8,7 @@ import axios from "axios";
 
 export default function Featured({ type, lists, setLists, listCopy }) {
   const [content, setContent] = useState({});
-  const { token } = useContext(userContext);
-  const [isMobile, setIsMobile] = useState(false);
+  const { token, setIsMobile, isMobile } = useContext(userContext);
 
   useEffect(() => {
     const getRandomContent = async () => {
@@ -43,7 +42,6 @@ export default function Featured({ type, lists, setLists, listCopy }) {
 
   useEffect(() => {
     if (window.innerWidth < 768) {
-      console.log("width changed!");
       setIsMobile(true);
     }
   }, []);

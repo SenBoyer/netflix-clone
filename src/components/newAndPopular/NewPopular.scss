@@ -39,3 +39,14 @@
 .modal img {
   border-radius: 10px
 }
+
+@media screen and (max-width: 767px) {
+  .new-movie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-left: 6px;
+    margin-top: 3rem;
+    margin-right: 10px;
+  }
+}
