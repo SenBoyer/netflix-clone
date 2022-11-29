@@ -17,7 +17,7 @@ export default function Login() {
   const startLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/api/auth/login", {
+      .post("http://reeeeee.tk:5000/api/auth/login", {
         email: formInfo.email,
         password: formInfo.password,
       })
@@ -34,7 +34,7 @@ export default function Login() {
 
   const guestLogin = () => {
     axios
-      .post("http://localhost:8080/api/auth/login", {
+      .post("http://reeeeee.tk:5000/api/auth/login", {
         email: "admin@admin.com",
         password: "admin",
       })
