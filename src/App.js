@@ -20,23 +20,34 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/register" element={<Register />} />
+        <Route path="/netflix-clone-front/register" element={<Register />} />
         <Route
           path="/login"
-          element={!user ? <Login /> : <Navigate to="/" />}
+          element={!user ? <Login /> : <Navigate to="/netflix-clone-front/" />}
         />
         <Route
           exact
           path="/"
-          element={user ? <Home /> : <Navigate to="/login" />}
+          element={
+            user ? <Home /> : <Navigate to="/netflix-clone-front/login" />
+          }
         />
         {user && (
           <>
-            <Route path="/movies" element={<Home type={"movie"} />} />
-            <Route path="/series" element={<Home type={"series"} />} />
-            <Route path="/watch" element={<Watch />} />
-            <Route path="/newpopular" element={<NewSection />} />
-            <Route path="/mylist" element={<MyList />} />
+            <Route
+              path="/netflix-clone-front/movies"
+              element={<Home type={"movie"} />}
+            />
+            <Route
+              path="/netflix-clone-front/series"
+              element={<Home type={"series"} />}
+            />
+            <Route path="/netflix-clone-front/watch" element={<Watch />} />
+            <Route
+              path="/netflix-clone-front/newpopular"
+              element={<NewSection />}
+            />
+            <Route path="/netflix-clone-front/mylist" element={<MyList />} />
           </>
         )}
       </Routes>
