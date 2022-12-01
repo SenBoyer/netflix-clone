@@ -41,7 +41,7 @@ export default function Login() {
       .then((response) => {
         setToken(response.data.access_token);
         setUser(true);
-        history("/");
+        history("/netflix-clone-front");
       })
       .catch(function (error) {
         console.log(error);
