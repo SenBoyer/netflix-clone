@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Register from "../register/Register";
 import axios from "axios";
 import { userContext } from "../../contextApi";
-import { useEffect } from "react";
 
 export default function Login() {
   const history = useNavigate();
@@ -17,7 +16,7 @@ export default function Login() {
   const startLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://reeeeee.tk:5000/api/auth/login", {
+      .post("https://reeeeee.tk/api/auth/login", {
         email: formInfo.email,
         password: formInfo.password,
       })
@@ -34,7 +33,7 @@ export default function Login() {
 
   const guestLogin = () => {
     axios
-      .post("http://reeeeee.tk:5000/api/auth/login", {
+      .post("https://reeeeee.tk/api/auth/login", {
         email: "admin@admin.com",
         password: "admin",
       })
