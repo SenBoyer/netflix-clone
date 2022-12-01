@@ -19,13 +19,13 @@ function Dropdown() {
             >
               <MenuIcon />
               <ul className="dropdown_menu dropdown_menu--animated dropdown_menu-6">
-                <Link to="/movies">
+                <Link to="/netflix-clone-front/movies">
                   <li className="dropdown_item-1">Movies</li>
                 </Link>
-                <Link to="/series">
+                <Link to="/netflix-clone-front/series">
                   <li className="dropdown_item-2">Series</li>
                 </Link>
-                <Link to="/newpopular">
+                <Link to="/netflix-clone-front/newpopular">
                   <li className="dropdown_item-3">Popular</li>
                 </Link>
               </ul>

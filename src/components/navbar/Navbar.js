@@ -24,19 +24,20 @@ const Navbar = () => {
         <div className="container">
           <div className="left">
             <img src="https://i.imgur.com/pHpvgQc.png" alt="" />
-            <Link to="/">
+            <Link to="/netflix-clone-front">
               <span className="link ">Homepage</span>
             </Link>
-            <Link to="/series">
+            /netflix-clone-front
+            <Link to="/netflix-clone-front/series">
               <span className="link ">Series</span>
             </Link>
-            <Link to="/movies">
+            <Link to="/netflix-clone-front/movies">
               <span className="link ">Movies</span>
             </Link>
-            <Link to="/newpopular">
+            <Link to="/netflix-clone-front/newpopular">
               <span>New and Popular</span>
             </Link>
-            <Link to="/mylist">
+            <Link to="/netflix-clone-front/mylist">
               <span>My List</span>
             </Link>
           </div>
