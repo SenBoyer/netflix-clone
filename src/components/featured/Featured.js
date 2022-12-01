@@ -14,7 +14,7 @@ export default function Featured({ type, lists, setLists, listCopy }) {
     const getRandomContent = async () => {
       try {
         const res = await axios.get(
-          `/featured/random${type ? "?type=" + type : ""}`,
+          `https://reeeeee.tk/api/featured/random${type ? "?type=" + type : ""}`,
           {
             headers: {
               token: `Bearer ${token}`,

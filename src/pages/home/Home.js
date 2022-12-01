@@ -17,7 +17,7 @@ const Home = ({ type }) => {
     const getRandomLists = async () => {
       try {
         const response = await axios.get(
-          `/lists${type ? "?type=" + type : ""}${
+          `https://reeeeee.tk/api/lists${type ? "?type=" + type : ""}${
             genre ? "?genre=" + genre : ""
           }`,
           {

@@ -18,7 +18,7 @@ export default function ListItem({ index, item }) {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const response = await axios.get("/movies/find/" + item, {
+        const response = await axios.get("https://reeeeee.tk/api//movies/find/" + item, {
           headers: {
             token: `Bearer ${token}`,
           },
