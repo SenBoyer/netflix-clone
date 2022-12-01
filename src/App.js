@@ -20,18 +20,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/netflix-clone-front/netflix-clone-front/register"
-          element={<Register />}
-        />
+        <Route path="/netflix-clone-front/register" element={<Register />} />
         <Route
           path="/netflix-clone-front/login"
-          element={!user ? <Login /> : <Navigate to="/" />}
+          element={!user ? <Login /> : <Navigate to="/netflix-clone-front" />}
         />
         <Route
           exact
           path="/netflix-clone-front/"
-          element={user ? <Home /> : <Navigate to="/login" />}
+          element={
+            user ? <Home /> : <Navigate to="/netflix-clone-front/login" />
+          }
         />
         {user && (
           <>

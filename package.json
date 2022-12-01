@@ -1,7 +1,7 @@
 {
   "name": "netflix",
   "version": "0.1.0",
-  "homepage": "https://senboyer.github.io/netflix-clone-front",
+  "homepage": "https://senboyer.github.io/netflix-clone-front/",
   "private": true,
   "dependencies": {
     "@emotion/react": "",
@@ -47,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://reeeeee.tk:5000/api/"
+  "proxy": "https://reeeeee.tk/api/"
 }
