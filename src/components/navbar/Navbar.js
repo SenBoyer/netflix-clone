@@ -27,7 +27,6 @@ const Navbar = () => {
             <Link to="/netflix-clone-front">
               <span className="link ">Homepage</span>
             </Link>
-            /netflix-clone-front
             <Link to="/netflix-clone-front/series">
               <span className="link ">Series</span>
             </Link>
