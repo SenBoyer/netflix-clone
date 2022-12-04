@@ -13,7 +13,7 @@ import axios from "axios";
 export default function ListItem({ index, item }) {
   const [isHovered, setIsHovered] = useState(false);
   const [movie, setMovie] = useState({});
-  const { token } = useContext(userContext);
+  const { token, isMobile } = useContext(userContext);
 
   useEffect(() => {
     const getMovies = async () => {
@@ -48,7 +48,7 @@ export default function ListItem({ index, item }) {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img src={movie.imgSmall} alt="" />
-        {isHovered && (
+        {!isMobile && isHovered && (
           <>
             <video src={movie.trailer} autoPlay={true} loop />
             <div className="itemInfo">
