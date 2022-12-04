@@ -40,7 +40,7 @@ export default function ListItem({ index, item }) {
   const params = { movie: { movie } };
 
   return (
-    <Link to="/watch" state={params}>
+    <Link to="/netflix-clone-front/watch" state={params}>
       <div
         className="listItem"
         style={{ left: isHovered && index * 175 }}
